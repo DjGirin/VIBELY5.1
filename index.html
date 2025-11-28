@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibely - AI Music Community V1.3 test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "react/": "https://aistudiocdn.com/react@^19.1.1/",
+      "react": "https://aistudiocdn.com/react@^19.1.1",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+    }
+  }
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'light-bg': '#F8F9FA',
+            'light-surface': '#FFFFFF',
+            'light-border': '#E9ECEF',
+            'light-text-primary': '#212529',
+            'light-text-secondary': '#6C757D',
+            'light-text-muted': '#ADB5BD',
+            'brand-pink': '#EC4899',
+            'brand-pink-accent': '#D946EF',
+            'brand-purple': '#8B5CF6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          keyframes: {
+            'fade-in-up': {
+              '0%': { opacity: '0', transform: 'translateY(10px) scale(0.98)' },
+              '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+            },
+            'typing-bubble': {
+              '0%, 80%, 100%': { transform: 'scale(0)' },
+              '40%': { transform: 'scale(1.0)' },
+            },
+            'slide-in-left': {
+              'from': { transform: 'translateX(100%)' },
+              'to': { transform: 'translateX(-110%)' },
+            }
+          },
+          animation: {
+            'fade-in-up': 'fade-in-up 0.3s ease-out forwards',
+            'slide-in-left': 'slide-in-left linear forwards',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @import url('https://rsms.me/inter/inter.css');
+    body { font-family: 'Inter', sans-serif; }
+    
+    .typing-indicator span {
+      height: 8px;
+      width: 8px;
+      background-color: #9E9EA1;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 1px;
+      animation: typing-bubble 1.2s infinite ease-in-out;
+    }
+    .typing-indicator span:nth-of-type(1) { animation-delay: -0.4s; }
+    .typing-indicator span:nth-of-type(2) { animation-delay: -0.2s; }
+    .typing-indicator span:nth-of-type(3) { animation-delay: 0s; }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-light-bg">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
